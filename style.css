@@ -97,6 +97,7 @@ body {
   padding: 8px 20px 16px;
   flex: 1;
   overflow-y: auto;
+  position: relative;
 }
 
 .hidden {
@@ -416,6 +417,12 @@ body {
   margin: 24px auto 20px;
 }
 
+.confirm-check.big {
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+}
+
 .goal-eyebrow {
   font-size: 13px;
   font-weight: 500;
@@ -526,6 +533,205 @@ body {
   color: #6E716C;
   max-width: 520px;
   margin: 0 auto;
+}
+
+.progress-block {
+  margin-bottom: 18px;
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.progress-value {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.progress-track {
+  height: 8px;
+  background: #EAEBE7;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 20px;
+  transition: width 0.6s ease;
+}
+
+.streak-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.streak-card:hover {
+  border-color: var(--green);
+}
+
+.streak-flame {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.streak-text {
+  flex: 1;
+}
+
+.streak-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.streak-detail {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 2px 0 0;
+}
+
+.streak-arrow {
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+
+.badge-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  overflow-x: auto;
+}
+
+.badge {
+  flex: 1;
+  min-width: 64px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.badge.earned {
+  background: var(--green-tint);
+  border-color: #C9EDD8;
+}
+
+.badge.locked {
+  opacity: 0.5;
+}
+
+.badge-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.badge-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.badge.earned .badge-label {
+  color: var(--green-deep);
+}
+
+.badge-toast {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 74px;
+  background: var(--ink);
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.badge-toast-text {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.badge-unlock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--green-tint);
+  border: 1px solid #C9EDD8;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 20px 0;
+}
+
+.badge-unlock-icon {
+  font-size: 24px;
+}
+
+.badge-unlock-title {
+  font-size: 11px;
+  color: var(--green-deep);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-unlock-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 2px 0 0;
+}
+
+.confetti-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -12px;
+  width: 7px;
+  height: 12px;
+  opacity: 0.9;
+  animation: confetti-fall 1.4s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(220px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 720px) {
