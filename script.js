@@ -74,11 +74,27 @@ document.addEventListener('DOMContentLoaded', function () {
   var goalBefore = document.getElementById('goal-before');
   var goalAfter = document.getElementById('goal-after');
 
+  function fireConfetti() {
+    var wrap = document.getElementById('confetti-wrap');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    var colors = ['#17C964', '#0E8F47', '#E5484D', '#131615'];
+    for (var i = 0; i < 24; i++) {
+      var piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.left = Math.random() * 100 + '%';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDelay = (Math.random() * 0.3) + 's';
+      wrap.appendChild(piece);
+    }
+  }
+
   var setGoalBtn = document.getElementById('set-goal-btn');
   if (setGoalBtn) {
     setGoalBtn.addEventListener('click', function () {
       goalBefore.classList.add('hidden');
       goalAfter.classList.remove('hidden');
+      fireConfetti();
     });
   }
 
@@ -87,6 +103,38 @@ document.addEventListener('DOMContentLoaded', function () {
     goalResetBtn.addEventListener('click', function () {
       goalAfter.classList.add('hidden');
       goalBefore.classList.remove('hidden');
+    });
+  }
+
+  var badgeToast = document.getElementById('badge-toast');
+  var badgeToastText = document.getElementById('badge-toast-text');
+  var badgeMessages = {
+    0: 'First payment, earned on day one.',
+    1: 'Three months of on-time payments in a row.',
+    2: 'Your score climbed 25 points since you started.',
+    3: 'Locked. Keep your streak going 5 more months to unlock.',
+  };
+
+  function showBadgeToast(text) {
+    if (!badgeToast) return;
+    badgeToastText.textContent = text;
+    badgeToast.classList.remove('hidden');
+    clearTimeout(showBadgeToast._t);
+    showBadgeToast._t = setTimeout(function () {
+      badgeToast.classList.add('hidden');
+    }, 2200);
+  }
+
+  document.querySelectorAll('.badge').forEach(function (badge) {
+    badge.addEventListener('click', function () {
+      showBadgeToast(badgeMessages[badge.dataset.badge] || '');
+    });
+  });
+
+  var streakCardBtn = document.getElementById('streak-card-btn');
+  if (streakCardBtn) {
+    streakCardBtn.addEventListener('click', function () {
+      showBadgeToast('4 more on-time months to unlock the 12-month badge.');
     });
   }
 
