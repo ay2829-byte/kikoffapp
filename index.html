@@ -35,10 +35,44 @@
               <p class="score-change">Up 34 points since you started</p>
             </div>
 
-            <button class="clarity-card clickable" id="payment-card-btn">
-              <p class="clarity-card-title">Next payment</p>
-              <p class="clarity-card-body">$5.00 on Sept 12. Card ending 4417 on file. Tap for details.</p>
+            <div class="progress-block">
+              <div class="progress-top">
+                <p class="progress-label">Next milestone: Good credit</p>
+                <p class="progress-value">642 / 700</p>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 68%;"></div>
+              </div>
+            </div>
+
+            <button class="streak-card clickable" id="streak-card-btn">
+              <div class="streak-flame">🔥</div>
+              <div class="streak-text">
+                <p class="streak-title">7 month streak</p>
+                <p class="streak-detail">Pay on time this month to keep it going</p>
+              </div>
+              <div class="streak-arrow">›</div>
             </button>
+
+            <div class="section-title">Your badges</div>
+            <div class="badge-row">
+              <button class="badge earned" data-badge="0">
+                <div class="badge-icon">✓</div>
+                <p class="badge-label">First payment</p>
+              </button>
+              <button class="badge earned" data-badge="1">
+                <div class="badge-icon">🔥</div>
+                <p class="badge-label">3mo streak</p>
+              </button>
+              <button class="badge earned" data-badge="2">
+                <div class="badge-icon">📈</div>
+                <p class="badge-label">+25 points</p>
+              </button>
+              <button class="badge locked" data-badge="3">
+                <div class="badge-icon">🏆</div>
+                <p class="badge-label">6mo streak</p>
+              </button>
+            </div>
 
             <div class="section-title">What's moving your score</div>
 
@@ -67,6 +101,15 @@
                 <p class="factor-detail">Still building history</p>
               </div>
               <p class="factor-tag neutral">Building</p>
+            </div>
+
+            <button class="clarity-card clickable" id="payment-card-btn">
+              <p class="clarity-card-title">Next payment</p>
+              <p class="clarity-card-body">$5.00 on Sept 12. Card ending 4417 on file. Tap for details.</p>
+            </button>
+
+            <div class="badge-toast hidden" id="badge-toast">
+              <p class="badge-toast-text" id="badge-toast-text"></p>
             </div>
           </div>
 
@@ -217,10 +260,20 @@
           </div>
 
           <div class="goal-content hidden" id="goal-after">
-            <div class="confirm-check">✓</div>
+            <div class="confetti-wrap" id="confetti-wrap"></div>
+            <div class="confirm-check big">✓</div>
             <p class="goal-eyebrow center">New goal set</p>
             <p class="goal-score center">700</p>
             <p class="goal-sub center">We'll track your progress and check in monthly.</p>
+
+            <div class="badge-unlock">
+              <div class="badge-unlock-icon">🏆</div>
+              <div>
+                <p class="badge-unlock-title">Badge unlocked</p>
+                <p class="badge-unlock-name">Goal setter</p>
+              </div>
+            </div>
+
             <button class="btn-secondary" id="goal-reset-btn">Back to overview</button>
           </div>
         </div>
