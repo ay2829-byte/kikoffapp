@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kikoff — Clarity Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <header class="page-header">
+    <h1>Kikoff, redesigned for clarity</h1>
+    <p>A concept exploring three moments where users get lost today: the home screen, cancelling, and hitting a goal. Click around, the buttons actually do something. Not affiliated with the real Kikoff app.</p>
+  </header>
+
+  <div class="phone-row">
+
+    <div class="phone-block">
+      <p class="phone-label">Home</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span class="status-icons">●●●</span>
+          </div>
+
+          <div class="home-content" id="tab-home">
+            <p class="greeting">Good morning, Anuj</p>
+
+            <div class="score-hero">
+              <p class="score-label">Your credit score</p>
+              <p class="score-number">642</p>
+              <p class="score-change">Up 34 points since you started</p>
+            </div>
+
+            <button class="clarity-card clickable" id="payment-card-btn">
+              <p class="clarity-card-title">Next payment</p>
+              <p class="clarity-card-body">$5.00 on Sept 12. Card ending 4417 on file. Tap for details.</p>
+            </button>
+
+            <div class="section-title">What's moving your score</div>
+
+            <div class="factor-row">
+              <div class="factor-dot factor-good"></div>
+              <div class="factor-text">
+                <p class="factor-name">On-time payments</p>
+                <p class="factor-detail">7 months in a row</p>
+              </div>
+              <p class="factor-tag good">Helping</p>
+            </div>
+
+            <div class="factor-row">
+              <div class="factor-dot factor-good"></div>
+              <div class="factor-text">
+                <p class="factor-name">Credit mix</p>
+                <p class="factor-detail">Added since you joined</p>
+              </div>
+              <p class="factor-tag good">Helping</p>
+            </div>
+
+            <div class="factor-row">
+              <div class="factor-dot factor-neutral"></div>
+              <div class="factor-text">
+                <p class="factor-name">Credit age</p>
+                <p class="factor-detail">Still building history</p>
+              </div>
+              <p class="factor-tag neutral">Building</p>
+            </div>
+          </div>
+
+          <div class="home-content hidden" id="tab-score">
+            <p class="greeting">Score details</p>
+            <div class="score-hero">
+              <p class="score-label">VantageScore 3.0</p>
+              <p class="score-number">642</p>
+              <p class="score-change">Fair range. 58 points to Good.</p>
+            </div>
+            <div class="clarity-card">
+              <p class="clarity-card-title">Reported to all 3 bureaus</p>
+              <p class="clarity-card-body">Equifax, Experian, and TransUnion each update monthly.</p>
+            </div>
+          </div>
+
+          <div class="home-content hidden" id="tab-account">
+            <p class="greeting">Account</p>
+            <div class="account-row">
+              <p class="account-label">Plan</p>
+              <p class="account-value">Basic, $5/mo</p>
+            </div>
+            <div class="account-row">
+              <p class="account-label">Payment method</p>
+              <p class="account-value">Card ending 4417</p>
+            </div>
+            <button class="cancel-link" id="go-to-cancel">Cancel my plan</button>
+          </div>
+
+          <nav class="tab-bar">
+            <div class="tab active" data-tab="home"><i class="tab-icon">◆</i>Home</div>
+            <div class="tab" data-tab="score"><i class="tab-icon">◇</i>Score</div>
+            <div class="tab" data-tab="account"><i class="tab-icon">◇</i>Account</div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-block">
+      <p class="phone-label">Before you cancel</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span class="status-icons">●●●</span>
+          </div>
+
+          <div class="cancel-content" id="cancel-step-1">
+            <p class="cancel-eyebrow">Account &gt; Cancel plan</p>
+
+            <h2 class="cancel-title">Before you go, here's exactly what happens</h2>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div>
+                  <p class="timeline-heading">Today</p>
+                  <p class="timeline-body">Your plan cancels. No more charges after this month.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div>
+                  <p class="timeline-heading">This billing cycle</p>
+                  <p class="timeline-body">You've already paid for Sept, so your account stays active until Sept 30.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div>
+                  <p class="timeline-heading">After Sept 30</p>
+                  <p class="timeline-body">Your Kikoff tradeline closes and stops reporting. Your score keeps the history you've already built.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="clarity-card warn">
+              <p class="clarity-card-title">You will not be charged again</p>
+              <p class="clarity-card-body">No further payments will be taken from your card ending 4417.</p>
+            </div>
+
+            <button class="btn-secondary" id="keep-account-btn">Keep my account</button>
+            <button class="btn-danger" id="continue-cancel-btn">Continue to cancel</button>
+          </div>
+
+          <div class="cancel-content hidden" id="cancel-step-2">
+            <p class="cancel-eyebrow">Account &gt; Cancel plan &gt; Confirm</p>
+            <h2 class="cancel-title">Confirm cancellation</h2>
+            <p class="confirm-body">Your plan will cancel today. Your account stays open through Sept 30, and no further payments will be taken.</p>
+            <button class="btn-danger filled" id="confirm-cancel-btn">Yes, cancel my plan</button>
+            <button class="btn-secondary" id="back-to-step1-btn">Go back</button>
+          </div>
+
+          <div class="cancel-content hidden" id="cancel-step-3">
+            <div class="confirm-check">✓</div>
+            <h2 class="cancel-title">Your plan is cancelled</h2>
+            <p class="confirm-body">Active through Sept 30. No further charges. You'll get an email confirmation shortly.</p>
+            <button class="btn-secondary" id="restart-btn">Start over</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-block">
+      <p class="phone-label">Goal reached</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span class="status-icons">●●●</span>
+          </div>
+
+          <div class="goal-content" id="goal-before">
+            <p class="goal-eyebrow">Goal reached</p>
+            <p class="goal-score">650</p>
+            <p class="goal-sub">You hit the score you set 4 months ago.</p>
+
+            <div class="divider"></div>
+
+            <p class="next-heading">Your next target</p>
+
+            <div class="next-goal-card">
+              <div class="next-goal-top">
+                <p class="next-goal-number">700</p>
+                <p class="next-goal-tag">Good credit range</p>
+              </div>
+              <p class="next-goal-body">Mostly driven by credit age, which builds on its own the longer your account stays open and paid on time.</p>
+            </div>
+
+            <div class="section-title">Two things that would help most</div>
+
+            <div class="help-row">
+              <p class="help-number">1</p>
+              <div>
+                <p class="help-title">Keep your oldest line open</p>
+                <p class="help-detail">Age matters more than most people think</p>
+              </div>
+            </div>
+            <div class="help-row">
+              <p class="help-number">2</p>
+              <div>
+                <p class="help-title">Add one more credit type</p>
+                <p class="help-detail">A mix of account types adds a small, steady lift</p>
+              </div>
+            </div>
+
+            <button class="btn-primary" id="set-goal-btn">Set 700 as my next goal</button>
+          </div>
+
+          <div class="goal-content hidden" id="goal-after">
+            <div class="confirm-check">✓</div>
+            <p class="goal-eyebrow center">New goal set</p>
+            <p class="goal-score center">700</p>
+            <p class="goal-sub center">We'll track your progress and check in monthly.</p>
+            <button class="btn-secondary" id="goal-reset-btn">Back to overview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="page-footer">
+    <p>Prototype by Anuj Yadav. Not affiliated with or endorsed by Kikoff. Colors and layout are inspired by common fintech app conventions, not copied from Kikoff's actual design files.</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
